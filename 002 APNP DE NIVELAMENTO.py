@@ -1,3 +1,4 @@
+import sys
 
 def menu():
     print()
@@ -20,8 +21,9 @@ def menu():
             modNotas()
 
         elif per.lower()=='f4':
-            print('O SISTEMA FOI FECHADO.')
-            break
+            print()
+            print('O SISTEMA FOI ENCERRADO!')
+            sys.exit()
         else:
             print('FUNÇÃO INVÁLIDA.')
 
@@ -33,17 +35,31 @@ def cadastro():
     while True:
 
         aluno = []
-        nome = input('Digite o nome do aluno: ')
-        aluno.append(nome)
 
-        nota = float(input('Digite a nota do aluno: '))
-        aluno.append(nota)
+        while True:
+            nome = input('Digite o nome do aluno: ')
+            if not isinstance(nome, str):
+                print('DADOS INVÁLIDOS. ')
+            else:
+                aluno.append(nome)
+                break
+
+            nota = float(input('Digite a nota do aluno: '))
+
+            aluno.append(nota)
+
 
         alunos.append(aluno)
-        p = input('Deseja adicionar mais alunos(S/N)? ')
+        while True:
+            p = input('Deseja adicionar mais alunos(S/N)? ')
 
-        if p.lower() == "n":
-            menu()
+            if p.lower() == "n":
+                menu()
+            elif p.lower() == 's':
+                cadastro()
+            else:
+                print('OPÇÃO INVÁLIDA')
+
 
 def informacoes():
     if not alunos:
