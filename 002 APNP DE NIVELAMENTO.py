@@ -83,7 +83,7 @@ def informacoes():
         
     else:
         for i, a in enumerate(alunos):
-            #FOR NUMERAÇÃO , ALUNO->(SUBLISTA)<  IN ENUMERATE(LISTA):
+            #FOR NUMERAÇÃO (i), ALUNO (a)->(SUBLISTA)<  IN ENUMERATE(LISTA):
             #ALUNOS = [[NOME,NOTA],[NOME,NOTA]]
             
             print (f'NOME: {a[0]} | MATRÍCULA: {i} | NOTA {a[1]} ')
