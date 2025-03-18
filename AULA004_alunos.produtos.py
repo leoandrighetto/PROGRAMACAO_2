@@ -94,3 +94,57 @@ if __name__ == '__main__':
     # produto3.alterarEstoque(1000)
     # produto3.info()
 
+
+
+------------- primeiro teste:
+
+
+class SistemadDeCadastros:
+    def __init__(self):
+        self.livros = {"COD1982":{"titulo": "harry potter", "codigo": "COD1982",
+                        "editora": "livraria",
+                        "categoria": "ficção",
+                        "ano": "1998",
+                        "valor": "45,98",
+                        "quantidade_em_estoque": "100"}}
+
+    def info(self):
+        for i, a in self.livros.items():
+            print(f"{i} - {a}")
+
+    def CadastrarNovoLivro(self):
+        print()
+        print(10 * "-=")
+        print("--CADASTRO DE LIVROS--")
+        print()
+
+        while True:
+
+            novo_livro = {}
+
+            self.titulo = input("> DIGITE O TÍTULO DO LIVRO: ")
+            novo_livro["titulo"] = self.titulo
+            self.codigo = input("> DIGITE O CÓDIGO DO LIVRO: ")
+            novo_livro["codigo"]=self.codigo
+            self.editora = input("> DIGITE A EDITORA DO LIVRO: ")
+            novo_livro["editora"]=self.editora
+            self.categoria=input(">DIGITE A CATEGORIA DO LIVRO: ")
+            novo_livro['categoria']=self.categoria
+            self.ano=input('> DIGITE O ANO DO LIVRO: ')
+            novo_livro['ano']=self.ano
+            self.valor=input('> DIGITE O VALOR DO LIVRO: ')
+            novo_livro['valor']=self.valor
+            self.quantidade_em_estoque=input('DIGITE A QUANTIDADE EM ESTOQUE DO LIVRO: ')
+            novo_livro['quantidade_em_estoque']=self.quantidade_em_estoque
+
+            self.livros[self.codigo]=novo_livro
+
+            for i,a in self.livros.items():
+                print(f'{i}-{a}')
+
+
+sistema = SistemadDeCadastros()
+
+sistema.CadastrarNovoLivro()
+
+
