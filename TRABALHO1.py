@@ -43,14 +43,14 @@ class SistemaDeCadastros:
         print("RESPONDA COM S / N:")
         pergunta_info = input('DESEJA CADASTRAR MAIS LIVROS? ')
 
-        opcao_escolhida_info = self
+        #opcao_escolhida_info = self
 
         if pergunta_info.lower() == "s":
-            opcao_escolhida_info.CadastrarNovoLivro()
+            self.CadastrarNovoLivro()
         else:
-            opcao_escolhida_info.MenuInterativo()
+            self.ExibirMenuInterativo()
 
-    def MenuInterativo(self):
+    def ExibirMenuInterativo(self):
         print(18 * "-=")
         print(18 * "-=")
         print("        --MENU PRINCIPAL--")
@@ -68,28 +68,26 @@ class SistemaDeCadastros:
 
         pergunta_menu_interativo = int(input("Digite a opção desejada >>> "))
 
-        opcao_escolhida_menu_interativo = self
-
         if pergunta_menu_interativo == 1:
-            opcao_escolhida_menu_interativo.CadastrarNovoLivro()  # CONDICIONA O USUÁRIO AO MENU DE CADASTRO
+            self.CadastrarNovoLivro()  # CONDICIONA O USUÁRIO AO MENU DE CADASTRO
 
         elif pergunta_menu_interativo == 2:
-            opcao_escolhida_menu_interativo.info()
+            self.info()
 
         elif pergunta_menu_interativo == 3:
-            opcao_escolhida_menu_interativo.BuscaPorNome()
+            self.BuscaPorNome()
 
         elif pergunta_menu_interativo == 4:
-            opcao_escolhida_menu_interativo.BuscaPorCategoria()
+            self.BuscaPorCategoria()
 
         elif pergunta_menu_interativo == 5:
-            opcao_escolhida_menu_interativo.BuscaPorPreco()
+            self.BuscaPorPreco()
 
         elif pergunta_menu_interativo == 6:
-            opcao_escolhida_menu_interativo.BuscaPorQuantidadeEmEstoque()
+            self.BuscaPorQuantidadeEmEstoque()
 
         elif pergunta_menu_interativo == 7:
-            opcao_escolhida_menu_interativo.BuscaPorValorDeEstoque()
+            self.BuscaPorValorDeEstoque()
 
         else:
             if pergunta_menu_interativo == 0:
@@ -145,10 +143,8 @@ class SistemaDeCadastros:
 
             pergunta_cadastro_novo_livro = int(input("Digite a opção desejada >>  "))
 
-            opcao_escolhida_cadastrar_novo_livro = self
-
             if pergunta_cadastro_novo_livro == 2:
-                opcao_escolhida_cadastrar_novo_livro.MenuInterativo()
+                self.ExibirMenuInterativo()
                 break
 
     def BuscaPorNome(self):  # OPÇÃO 3 DO MENU INTERATIVO
@@ -159,8 +155,6 @@ class SistemaDeCadastros:
         while True:
             print()
             pergunta_1_busca_por_nome = input("Digite o nome do livro (ou 0 para sair): ")
-
-            opcao_escolhida_busca_por_nome = self
 
             if pergunta_1_busca_por_nome.lower() != "0":  # Se o usuário digitou algum nome
 
@@ -189,7 +183,7 @@ class SistemaDeCadastros:
                     pergunta_2_busca_por_nome = int(input("Digite a opção desejada >>> "))
 
                     if pergunta_2_busca_por_nome != 1:
-                        opcao_escolhida_busca_por_nome.MenuInterativo()
+                        self.ExibirMenuInterativo()
 
 
                 else:
@@ -200,11 +194,11 @@ class SistemaDeCadastros:
                     pergunta_3_busca_por_nome = input("Gostaria de consultar outro livro (s/ n)? ")
 
                     if pergunta_3_busca_por_nome.lower() == "n":
-                        opcao_escolhida_busca_por_nome.MenuInterativo()
+                        self.ExibirMenuInterativo()
 
             else:
                 if pergunta_1_busca_por_nome == "0":
-                    opcao_escolhida_busca_por_nome.MenuInterativo()
+                    self.ExibirMenuInterativo()
 
     def BuscaPorCategoria(self):  # OPÇÃO 4 DO MENU INTERATIVO
         print()
@@ -214,8 +208,6 @@ class SistemaDeCadastros:
 
         while True:
             pergunta_1_busca_por_categoria = input("Digite o nome da categoria (ou 0 para sair): ")
-
-            opcao_escolhida_busca_por_categoria = self
 
             if pergunta_1_busca_por_categoria.lower() != "0":
 
@@ -245,7 +237,7 @@ class SistemaDeCadastros:
                     pergunta_2_busca_por_categoria = int(input("Digite a opção desejada >>> "))
 
                     if pergunta_2_busca_por_categoria != 1:
-                        opcao_escolhida_busca_por_categoria.MenuInterativo()
+                        self.ExibirMenuInterativo()
 
 
                 else:
@@ -256,11 +248,11 @@ class SistemaDeCadastros:
                     pergunta_3_busca_por_categoria = input("Gostaria de consultar outra categoria (s/n)? ")
 
                     if pergunta_3_busca_por_categoria.lower() == "n":
-                        opcao_escolhida_busca_por_categoria.MenuInterativo()
+                        self.ExibirMenuInterativo()
 
             else:
-                if pergunta_1_busca_por_nome == "0":
-                    opcao_escolhida_busca_por_nome.MenuInterativo()
+                if pergunta_1_busca_por_categoria == "0":
+                    self.ExibirMenuInterativo()
 
     def BuscaPorPreco(self):  # OPÇÃO 5 DO MENU INTERATIVO
         print()
@@ -271,8 +263,6 @@ class SistemaDeCadastros:
         while True:
             print()
             pergunta_1_busca_por_preco = int(input("Digite seu valor máximo (ou 0 para sair): "))
-
-            opcao_escolhida_busca_por_preco = self
 
             if pergunta_1_busca_por_preco != 0:
 
@@ -302,7 +292,7 @@ class SistemaDeCadastros:
                     pergunta_2_busca_por_preco = int(input("Digite a opção desejada >>> "))
 
                     if pergunta_2_busca_por_preco != 1:
-                        opcao_escolhida_busca_por_preco.MenuInterativo()
+                        self.ExibirMenuInterativo()
 
 
                 else:
@@ -313,11 +303,11 @@ class SistemaDeCadastros:
                     pergunta_3_busca_por_preco = input("Gostaria de colicitar uma nova busca (s/n)? ")
 
                     if pergunta_3_busca_por_preco.lower() == "n":
-                        opcao_escolhida_busca_por_preco.MenuInterativo()
+                        self.ExibirMenuInterativo()
 
             else:
                 if pergunta_1_busca_por_preco == 0:
-                    opcao_escolhida_busca_por_preco.MenuInterativo()
+                    self.ExibirMenuInterativo()
 
     def BuscaPorQuantidadeEmEstoque(self):  # OPÇÃO 6 DO MENU INTERATIVO
         print()
@@ -328,8 +318,6 @@ class SistemaDeCadastros:
         while True:
             print()
             pergunta_1_busca_por_estoque = int(input("Digite a quantidade desejada (ou 0 para sair): "))
-
-            opcao_escolhida_busca_por_estoque = self
 
             if pergunta_1_busca_por_estoque != 0:
 
@@ -354,7 +342,7 @@ class SistemaDeCadastros:
                     pergunta_2_busca_por_por_estoque = int(input("Digite a opção desejada >>> "))
 
                     if pergunta_2_busca_por_por_estoque != 1:
-                        opcao_escolhida_busca_por_estoque.MenuInterativo()
+                        self.ExibirMenuInterativo()
 
 
                 else:
@@ -367,11 +355,11 @@ class SistemaDeCadastros:
                     pergunta_3_busca_por_estoque = input("Gostaria de solicitar uma nova busca (s/n)? ")
 
                     if pergunta_3_busca_por_estoque.lower() == "n":
-                        opcao_escolhida_busca_por_estoque.MenuInterativo()
+                        self.ExibirMenuInterativo()
 
             else:
                 if pergunta_1_busca_por_estoque == 0:
-                    opcao_escolhida_busca_por_estoque.MenuInterativo()
+                    self.ExibirMenuInterativo()
 
     def BuscaPorValorDeEstoque(self):  # OPÇÃO 7
         print()
@@ -382,8 +370,6 @@ class SistemaDeCadastros:
         while True:
             print()
             pergunta_1_busca_por_valor_de_estoque = int(input("Digite o valor mínimo da busca: (0 - SAIR): "))
-
-            opcao_escolhida_busca_por_valor_de_estoque = self
 
             if pergunta_1_busca_por_valor_de_estoque != 0:
 
@@ -412,7 +398,7 @@ class SistemaDeCadastros:
                     pergunta_2_busca_por_por_valor_de_estoque = int(input("Digite a opção desejada >>> "))
 
                     if pergunta_2_busca_por_por_valor_de_estoque != 1:
-                        opcao_escolhida_busca_por_valor_de_estoque.MenuInterativo()
+                        self.ExibirMenuInterativo()
 
 
                 else:
@@ -425,11 +411,11 @@ class SistemaDeCadastros:
                     pergunta_3_busca_por_valor_de_estoque = input("Gostaria de solicitar uma nova busca (s/n)? ")
 
                     if pergunta_3_busca_por_valor_de_estoque.lower() == "n":
-                        opcao_escolhida_busca_por_valor_de_estoque.MenuInterativo()
+                        self.ExibirMenuInterativo()
 
             else:
-                if pergunta_1_busca_por_valor_de_estoque == "0":
-                    opcao_escolhida_busca_por_valor_de_estoque.MenuInterativo()
+                if pergunta_1_busca_por_valor_de_estoque == 0:
+                    self.ExibirMenuInterativo()
 
 
-SistemaDeCadastros().MenuInterativo()
+SistemaDeCadastros().ExibirMenuInterativo()
